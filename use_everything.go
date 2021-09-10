@@ -5,6 +5,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strconv"
 	"syscall"
 	"unicode/utf16"
 	"unsafe"
@@ -142,7 +143,7 @@ func (e EverythingErr) Error() string {
 	case EverythingErrorInvalidParameter:
 		return "bad parameter."
 	default:
-		return "unknown exception"
+		return "unknown exception number:" + strconv.Itoa(int(e))
 	}
 }
 
